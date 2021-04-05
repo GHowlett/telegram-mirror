@@ -19,7 +19,9 @@ with TelegramClient('tg', api_id, api_hash, sequential_updates=True) as client:
 
     @client.on(events.NewMessage(chats=[chat_id]))
     async def callback(event):
+        print(event)
         await client.send_message(fwd_chat_id, event.message)
-
+    
+    print("listening for new messages...")
     client.start() 
     client.run_until_disconnected()

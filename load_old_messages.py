@@ -30,6 +30,7 @@ async def main():
     async for message in reversed(messages):
         if type(message) is Message:
             await client.send_message(fwd_chat_id, message)
+    print("messages mirrored into channel.")
 
 with TelegramClient('tg', api_id, api_hash) as client:
     client.loop.run_until_complete(main())
