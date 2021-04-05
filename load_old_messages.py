@@ -3,31 +3,26 @@ from telethon.tl.patched import Message
 import sys
 import logging
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+logging.basicConfig(
+    format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+    level=logging.WARNING)
 
-# Use your own values from my.telegram.org
+# use your own values from my.telegram.org
 api_id = 00000000
-api_hash = 'use your own hash'
+api_hash = 'get your own hash!'
 
 # use your own chat ids
 chat_id = -1
 fwd_chat_id = -1
 
 async def main():
-    # Getting information about yourself
-    me = await client.get_me()
-    print(me.stringify())
-
-    # You can print all the dialogs/conversations that you are part of.
-    # Retrieve the id of the channel you're mirroring 
-    # and set it at the top of the script.
-    async for dialog in client.iter_dialogs():
-        print(dialog.name, 'has ID', dialog.id)
-
-    # stop here if chat_id and fwd_chat_id are not set
     if chat_id == -1 or fwd_chat_id == -1:
-        print("please set chat_id and fwd_chat_id")
+        print("\nERROR: you must set chat_id and fwd_chat_id.\n")
+        print("channel ids in your account: \n")
+        # retrieve the id of the channel you're mirroring 
+        # from the output and set it at the top of the script.
+        async for dialog in client.iter_dialogs():
+            print('{0:15} {1}'.format(dialog.id, dialog.name))
         exit(1)
 
     # load the mirror chat with all previous messages

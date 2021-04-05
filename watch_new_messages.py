@@ -3,10 +3,11 @@ from telethon.tl.patched import Message
 import sys
 import logging
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+logging.basicConfig(
+    format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+    level=logging.WARNING)
 
-# Use your own values from my.telegram.org
+# use your own values from my.telegram.org
 api_id = 00000000
 api_hash = 'get your own hash!'
 
