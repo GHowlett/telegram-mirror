@@ -8,6 +8,7 @@
 
 ## TODO
 
+- allow any number of mirror bindings, not just one
 - combine 2 scripts into one cli util
 - it should possible to accurately quote the messages: you map every message from the original chat with the forwarding chat, with a id to id map, and when a message is a quote, then you find the right message using that map
 
