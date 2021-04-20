@@ -1,0 +1,8 @@
+telegram:
+    # use your own values from my.telegram.org
+    api_id: 00000000000
+    api_hash: 'get your own hash!'
+    
+    # see README for how to get your own chat ids
+    src_chat_id: -1
+    fwd_chat_id: -2

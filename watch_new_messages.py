@@ -2,18 +2,18 @@ from telethon import TelegramClient, events, errors
 from telethon.tl.patched import Message
 import sys
 import logging
+import yaml
+
+config = yaml.safe_load(open("config.yml"))
 
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
     level=logging.WARNING)
 
-# use your own values from my.telegram.org
-api_id = 00000000
-api_hash = 'get your own hash!'
-
-# use your own chat ids
-chat_id = -1
-fwd_chat_id = -1
+api_id = config["telegram"]["api_id"]
+api_hash = config["telegram"]["api_hash"]
+chat_id = config["telegram"]["src_chat_id"] 
+fwd_chat_id = config["telegram"]["fwd_chat_id"]
 
 with TelegramClient('tg', api_id, api_hash, sequential_updates=True) as client:
 

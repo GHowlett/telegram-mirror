@@ -9,7 +9,6 @@
 ## TODO
 
 - combine 2 scripts into one cli util
-- move credentials from script to settings file
 - it should possible to accurately quote the messages: you map every message from the original chat with the forwarding chat, with a id to id map, and when a message is a quote, then you find the right message using that map
 
 `$ tgmirror src=-01909212 dst=-010920192` 
