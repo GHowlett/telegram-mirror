@@ -2,7 +2,7 @@
 ## Install
 
 1. set your telegram api credentials in the scripts
-2. run `$ python3 load_old_messages.py.` It will print out your account's channel and chat ids
+2. run `$ python3 load_old_messages.py` It will print out your account's channel and chat ids
 3. set the source and target channel ids for message mirroring in the scripts
 4. run `$ python3 watch_new_messages.py`
 
